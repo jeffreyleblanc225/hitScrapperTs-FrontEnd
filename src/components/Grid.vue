@@ -1,46 +1,21 @@
 <script lang="ts">
-import { defineComponent, reactive } from "vue";
+import { defineComponent } from "vue";
 import { hitsStore } from "@/stores/Hit";
-import hitSocket from "@/components/HitSocket.vue";
-import type { Hit } from "@/models/Hit";
-import { storeToRefs } from "pinia";
 
 export default defineComponent({
   name: "HitGrid",
   components: {},
   emits: ["dequeue"],
   data() {},
-  setup(props, ctx) {
-    ctx.emit("dequeue");
+  setup() {
     const hits = hitsStore();
-    let deleteRow = (row: string) => {
-      console.log("deleteRow: " + row);
-      //data.splice(data.indexOf(row), 1);
-    };
     return {
-      deleteRow,
       hits,
     };
   },
-  //   data: () => ({ hitToDequeue: "", hits: {} }),
-  //    data (){
-  //     return {
-  //           hit: {}
-  //     }
-  //   //  }
-  //   // setup() {
-  //   //   const _hits = hitsStore().hits;
-  //   //   hits = _hits;
-  //   //   // hits.hits.
-  //   // },
-  // });
 });
 </script>
 <template>
-  <!-- <div v-for="h in hits.getHits" :key="h.hit_set_id">
-    <div>{{ h.pay }} {{ h.hit_set_id }}</div>
-  </div> -->
-
   <table width="100%" id="firstTable">
     <caption>
       Hits currently in queue
