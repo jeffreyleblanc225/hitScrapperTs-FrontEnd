@@ -88,6 +88,12 @@ export default defineComponent({
       </tr>
     </tbody>
   </table>
+  <hr />
+  While this app is in beta, please consider donating.
+  <br />
+  BTC: bc1qdq65wt30gpcdsuysmluqea3qcsy6drsea2dvus
+  <br />
+  LTC: ltc1qxh2h2msml7lqekvuhux8nr8yd22lsmq67xlrmt
 </template>
 <style>
 :root {
