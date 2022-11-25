@@ -9,12 +9,6 @@ function dequeue(hId: string) {
 </script>
 
 <template>
-  <header>
-    <!-- <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div> -->
-  </header>
-
   <main>
     <HitSocketVue :hit-id-to-dequeue="hitIdToDequeue" />
     <GridVue @dequeue="dequeue" />

@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { hitsStore } from "@/stores/Hit";
-// import type { Hit } from "@/models/Hit";
 import { io } from "socket.io-client";
 import type { Hit } from "@/models/Hit";
 export default defineComponent({
@@ -12,26 +11,18 @@ export default defineComponent({
     },
   },
   watch: {
-    // It listens to the change in prop name
     hitIdToDequeue: function (hId: string) {
       // eslint-disable-next-line no-extra-boolean-cast
       if (!!hId) {
         const socket = io("http://localhost:9000");
         hitsStore().removeHit(hId);
-        console.log("watcher: remove hit: " + hId); // print out when the name changes
+        console.log("watcher: remove hit: " + hId);
         socket.emit("dequeue", hId);
       }
     },
   },
   components: {},
-  //   data: () => ({ hitToDequeue: "", hits: {} }),
-  data() {
-    // return {
-    //   hit: {},
-    // };
-  },
   setup() {
-    //const _hits = hitsStore().hits;
     const socket = io("http://localhost:9000");
     socket.on("connect", () => {
       console.log("connect");

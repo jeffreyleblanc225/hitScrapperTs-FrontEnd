@@ -44,18 +44,3 @@ export const hitsStore = defineStore("hits", {
     },
   },
 });
-// optional getters
-// getters: {
-//   // getters receive the state as first parameter
-//   doubleCounter: (state) => state.counter * 2,
-//   // use getters in other getters
-//   doubleCounterPlusOne(): number {
-//     return this.doubleCounter + 1
-//   },
-// },
-// could also be defined as
-// state: () => ({ count: 0 })
-// actions: {
-//   increment() {
-//     this.++;
-//   },
